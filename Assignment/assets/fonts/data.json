@@ -1,0 +1,52 @@
+{
+    "pageTextData": [
+		{
+			"title": "Coca Cola Great Britain",
+			"subTitle": "Founded in 1886 Dr John S Pemberton",		
+			"description": "Coca-Cola Original Taste is the world's favourite soft drink and has been enjoyed since 1886."
+		},
+		{
+			"title": "Coke Zero",
+			"subTitle": "New York Harbour, 1886",		
+			"description": "Coca‑Cola Zero Sugar is the perfect drink for people who want all the taste of Coca‑Cola Original Taste, without the sugar or calories."
+		},
+		{
+			"title": "Fanta",
+			"subTitle": "West Germany, 1959",		
+			"description": "Bright, bubbly, instantly refreshing and great tasting. Fanta Orange is made with 100% natural flavours, fruit juice and is caffeine free."
+		},
+		{
+			"title": "Oasis",
+			"subTitle": "Texas, 1885",		
+			"description": "Oasis is a great tasting refreshing still drink with big, colourful flavours and an attitude that sees the funny side of things."
+		},
+		{
+			"x3dModelTitle": "Coke Zero X3D Model",
+			"x3dCreationMethod": "This X3D model of the coke can has been created in 3ds Max, exported to VRML97 and converted, using the instantreality transcoders, to X3D for display online.",
+			"title": "History of Coca Cola",
+			"subTitle": "Atlanta Beginnings",		
+			"description": "It was 1886, and in New York Harbour, workers were constructing the Statue of Liberty. Eight hundred miles away, another great American symbol was about to be unveiled. Like many people who change history, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, he carried it a few doors down to Jacobs' Pharmacy. Here, the mixture was combined with carbonated water and sampled by customers who all agreed - this new drink was something special. So Jacobs' Pharmacy put it on sale for five cents (about 3p) a glass."
+		},
+		{
+			"x3dModelTitle": "Fanta X3D Model",
+			"x3dCreationMethod": "This X3D model of the fanta bottle has been created in 3ds Max, exported to VRML97 and converted, using the instantreality transcoders, to X3D for display online.",
+			"title": "Fanta Beginnings",
+			"subTitle": "First introduced in 1961",		
+			"description": "Fanta is for many the definitive orange soda. Popular worldwide, the brand has always been owned by Coca-Cola. But the drink was actually created in Germany, and owes its existence to ingredient shortages during the Second World War."
+		},
+        {
+			"x3dModelTitle": "Oasis X3D Model",
+			"x3dCreationMethod": "This X3D model of the oasis bottle has been created in 3ds Max, exported to VRML97 and converted, using the instantreality transcoders, to X3D for display online.",
+			"title": "Oasis",
+			"subTitle": "23 fruit flavours",		
+			"description": "Oasis is a non-carbonated bottled soft drink, a product of Orangina Schweppes. In Great Britain it is manufactured by the Coca-Cola EuroPacific Partners in conjunction with Coca-Cola Company subsidiary Atlantic Industries and in Northern Ireland and the Republic of Ireland it is distributed by Coca-Cola HBC Ireland and Northern Ireland."
+		},
+		{
+			"galleryTitle": "Gallery"
+		},
+		{
+			"CameraTitle": "Camera Views",
+			"CameraSubtitle": "These buttons select a range of X3D model viewpoints"
+		}
+	]
+}

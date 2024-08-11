@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.6.0-web/css/all.css">
+    <!-- X3DOM CSS -->
+    <link rel="stylesheet" href="x3dom-1.8.2/x3dom.css">
+    <script type="text/javascript">
+
+        var counter = 0;
+        
+        function swap(selected)
+        {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('coke_zero').style.display = 'none';
+            document.getElementById('fanta').style.display = 'none';
+            document.getElementById('oasis').style.display = 'none';
+        
+            document.getElementById(selected).style.display = 'block';
+        }
+        function changeLook()
+        {
+          counter +=1;
+          switch (counter){
+            case 1:
+              document.getElementById('theme').style.backgroundColor = '#01FF9';
+              document.getElementById('header').style.backgroundColor = '#F9F501';
+              break;
+            case 2:
+              document.getElementById('theme').style.backgroundColor = '#44318D';
+              document.getElementById('header').style.backgroundColor = '#E000F7';
+              break;
+            case 3:
+              document.getElementById('theme').style.backgroundColor = '#F70000';
+              document.getElementById('header').style.backgroundColor = '#E4F700';
+              break;
+            default:
+            counter = 0;
+            changeLook();
+        
+          }
+        }
+        function switchCamera(cameraId) {
+            // Query the X3D scene to find the correct viewpoint
+            const viewpoint = document.querySelector(`viewpoint[DEF="${cameraId}"]`);
+
+            if (viewpoint) {
+                // Bind the viewpoint to make it active
+                viewpoint.setAttribute('set_bind', 'true');
+            } else {
+                console.error(`Viewpoint with DEF ${cameraId} not found.`);
+            }
+        }
+
+          
+
+        </script>        
+        
+              
+            </head>
+        <body id="theme">
+        
+        
+            <nav id="header"class="navbar navbar-expand-sm navbar_coca_cola">
+                <div class="container">
+                  <div class="logo">
+                    <a class="navbar-brand" href="javascript:swap('home')">
+                    <h1>1</h1>
+                    <h1>oca</h1>
+                    <h2>Cola</h2>
+                    <h3>Journey</h3>
+                    <p>Refreshing the world, one story at a time</p>
+                    </a>
+                  </div>
+        
+        
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                        <a class="nav-link" href="javascript:swap('home')">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="About Web 3D Applications" data-content="3D Apps is a final year and postgraduate module ...">About</a>
+                      </li>
+        
+                      <!--Dropdown-->
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="javascript:swap('home')" id="navbardrop" data-toggle="dropdown">
+                            Drinks
+                          </a>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:swap('coke_zero')">Coke</a>
+                            <a class="dropdown-item" href="javascript:swap('fanta')">Fanta</a>
+                            <a class="dropdown-item" href="javascript:swap('oasis')">Oasis</a>
+                          </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="popover" data-trigger="hover"
+                        data-placement="bottom" title="Contact" data-content="Mohamed Allam, Sussex University. E-mail: ma2237@sussex.ac.uk">Contact</a>   
+                    </li></ul>
+                  </div>
+                </div>
+              </nav>
+            
+            <div id="home" class="container-fluid main_contents">
+                <!--NavBar Container-->
+                <div class="header-container">
+                    <br>
+                    <h6>.Enjoy Thirst.</h6>
+                </div>
+
+                <div class="cover-container">
+                  <div class="container main_contents">
+                    <div class="row"> <!-- Main_3D Image or Carousel -->
+                      <div class ="col-sm-12">
+                        <div id="main_3d_image">
+                            <div id="main_text" class="col-xs-12 col-sm-4">
+                                <div id="title_home" class="card-title homeText"></div>
+                                <div id="subTitle_home"></div>
+                                <div id="description_home"></div>
+                            </div> 
+                        </div> 
+                      </div>
+                    </div>
+              
+                    <!-- Row of cards on the grid -->
+                    <div class="row">
+                      <!-- Coca Cola Column -->
+                      <div class="col-sm-4">
+                        <div class="card">
+                          <a href="javascript:swap('coke_zero')">
+                              <img class="card-img-top img-fluid img-thumbnail" src="assets/images/coke_can.jpg" alt="Coke_Zero">
+                          </a>
+                          <div class="card-body">
+                            <div id="title_left"></div>
+                            <div id="description_left"></div>
+                             <button id="btnCoke" class="btn-danger">Hide..</button>
+                             <button id="btnCoke2" class="btn-success">Show..</button>
+                             <br><br>
+                              <a href="https://www.coca-cola.com/gb/en/brands/coca-cola-zero-sugar" class="btn btn-primary">Find out more ...</a>   
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <!-- Sprite Column -->
+                      <div class="col-sm-4">
+                        <div class="card">
+                          <a href="javascript:swap('fanta')">
+                              <img class="card-img-top img-fluid img-thumbnail" src="assets/images/fanta_can.jpg" alt="Fanta">
+                          </a>
+                          <div class="card-body">
+                            <div id="title_centre"></div>
+                            <div id="description_centre"></div>
+                            <button id="btnFanta" class="btn-danger">Hide..</button>
+                            <button id="btnFanta2" class="btn-success">Show..</button>
+                            <br><br>
+                            <a href="https://www.coca-cola.com/gb/en/brands/fanta" class="btn btn-primary">Find out more ...</a>
+                          </div>
+                        </div>
+                      </div>
+                        
+                      <!-- Dr Pepper Column -->
+                      <div class="col-sm-4">
+                        <div class="card">
+                          <a href="javascript:swap('oasis')">
+                              <img class="card-img-top img-fluid img-thumbnail" src="assets/images/oasis_bottle.jpg" alt="Oasis">
+                          </a>
+                          <div class="card-body">
+                            <div id="title_right"></div>
+                            <div id="description_right"></div>
+                            <button id="btnOasis" class="btn-danger">Hide..</button>
+                            <button id="btnOasis2" class="btn-success">Show..</button>
+                            <br><br>
+                            <a href="https://www.coca-cola.com/gb/en/brands/oasis" class="btn btn-primary">Find out more ...</a>
+                          </div>
+                        </div>
+                      </div>   
+                    </div> 
+                  </div>
+                </div>
+                
+            </div>
+        
+        
+        
+            <div id="coke_zero" class="container-fluid main_contents" style="display: none;">
+
+                <div class="header-container">
+                    <br>
+                    <h6>.Enjoy Thirst.</h6>
+                </div>
+                <br>
+                <div class="cover-container">
+                    <br>
+                <div class="row">
+                    <div class="col-xs-9 col-sm-9 col-lg-9">
+                      <div class="card text-left">
+        
+                        <div class="card-header">
+                          <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                              <a class="nav-link" href="javascript:swap('coke_zero')">Coke_Zero</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="javascript:swap('fanta')">Fanta</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="javascript:swap('oasis')">Oasis</a>
+                            </li>
+                          </ul>
+                        </div>
+        
+        
+                        <div class="card-body">
+                          <div id="x3dModelTitle_coke"></div>
+                          <div class="model3D">
+                              <x3d width="">
+                                  <scene>
+                                      <inline url="coke_scenes/coke_model.x3d"></inline>
+                                  </scene>
+                              </x3d>
+                          </div>
+                          <div id="x3dCreationMethod_coke"></div>
+                          <a href="#" class="btn btn-primary btn-responsive camera-font" onclick="switchCamera('Front')">Front</a>
+                          <a href="#" class="btn btn-secondary btn-responsive camera-font" onclick="switchCamera('Back')">Back</a>
+                          <a href="#" class="btn btn-success btn-responsive camera-font" onclick="switchCamera('Left')">Left</a>
+                          <a href="#" class="btn btn-danger btn-responsive camera-font" onclick="switchCamera('Right')">Right</a>
+                        </div>
+                      </div>
+                    </div>
+                  
+                  
+                    <div class="col-sm-3">
+                      <div class="card text-left">
+                        <h4 class="card-header gallery-header"> Gallery</h4>
+                          <div class="card-body">
+                            <table id="gallery_coke"></table>
+                            <br><br>
+                          </div>
+                      </div>
+                    </div>
+            </div>
+            <br>
+        </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="card">
+                          <div class="card-body">
+                            <div id="title_coke"></div>
+                            <div id="description_coke"></div>
+                            <a href="https://www.coca-cola.com/gb/en" class="btn btn-primary">Find out more ...</a>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        
+        
+            <div id="fanta" class="container-fluid main_contents" style="display: none;">
+
+              <div class="header-container">
+                <br>
+                <h6>.Enjoy Thirst.</h6>
+            </div>
+            <br>
+            <div class="cover-container">
+                <br>
+            <div class="row">
+                <div class="col-xs-9 col-sm-9 col-lg-9">
+                  <div class="card text-left">
+    
+                    <div class="card-header">
+                      <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                          <a class="nav-link" href="javascript:swap('coke_zero')">Coke_Zero</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="javascript:swap('fanta')">Fanta</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="javascript:swap('oasis')">Oasis</a>
+                        </li>
+                      </ul>
+                    </div>
+    
+    
+                    <div class="card-body">
+                      <div id="x3dModelTitle_fanta"></div>
+                      <div class="model3D">
+                          <x3d width="">
+                              <scene>
+                                  <inline url="fanta_scenes/fanta_model.x3d"></inline>
+                              </scene>
+                          </x3d>
+                      </div>
+                      <div id="x3dCreationMethod_fanta"></div>
+                      <a href="#" class="btn btn-primary btn-responsive camera-font">Front</a>
+                      <a href="#" class="btn btn-secondary btn-responsive camera-font">Back</a>
+                      <a href="#" class="btn btn-success btn-responsive camera-font">Left</a>
+                      <a href="#" class="btn btn-danger btn-responsive camera-font">Right</a>
+                    </div>
+                  </div>
+                </div>
+              
+              
+                <div class="col-sm-3">
+                  <div class="card text-left">
+                    <h4 class="card-header gallery-header"> Gallery</h4>
+                      <div class="card-body">
+                        <table id="gallery_fanta"></table>
+                        <br><br>
+                      </div>
+                  </div>
+                </div>
+        </div>
+        <br>
+    </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="card">
+                      <div class="card-body">
+                        <div id="title_fanta"></div>
+                        <div id="description_fanta"></div>
+                        <a href="https://www.coca-cola.com/gb/en/brands/fanta" class="btn btn-primary">Find out more ...</a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        
+            <div id="oasis" class="container-fluid main_contents" style="display: none;">
+
+                <div class="header-container">
+                    <br>
+                    <h6>.Enjoy Thirst.</h6>
+                </div>
+                <br>
+                <div class="cover-container">
+                    <br>
+                <div class="row">
+                    <div class="col-xs-9 col-sm-9 col-lg-9">
+                      <div class="card text-left">
+        
+                        <div class="card-header">
+                          <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                              <a class="nav-link" href="javascript:swap('coke_zero')">Coke_Zero</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="javascript:swap('fanta')">Fanta</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="javascript:swap('oasis')">Oasis</a>
+                            </li>
+                          </ul>
+                        </div>
+        
+        
+                        <div class="card-body">
+                          <div id="x3dModelTitle_oasis"></div>
+                          <div class="model3D">
+                              <x3d id="x3dElement" >
+                                  <scene>
+                                      <inline url="oasis_scenes/oasis_model.x3d"></inline>
+        
+                                  </scene>
+                              </x3d>
+                          </div>
+                          <div id="x3dCreationMethod_oasis"></div>
+                          <button class="btn btn-primary btn-responsive camera-font"onclick="changeViewpoint1()">Front</button>
+                          <button class="btn btn-secondary btn-responsive camera-font"onclick="changeViewpoint2()">Back</button>
+                          <a href="#" class="btn btn-success btn-responsive camera-font">Left</a>
+                          <a href="#" class="btn btn-danger btn-responsive camera-font">Right</a>
+                        </div>
+                      </div>
+                    </div>
+                  
+                  
+                    <div class="col-sm-3">
+                      <div class="card text-left">
+                        <h4 class="card-header gallery-header"> Gallery</h4>
+                          <div class="card-body">
+                            <table id="gallery_oasis"></table>
+                            <br><br>
+                          </div>
+                      </div>
+                    </div>
+              <br>
+            </div>
+            <br>
+                </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="card">
+                          <div class="card-body">
+                            <div id="title_oasis"></div>
+                            <div id="description_oasis"></div>
+                            <a href="https://www.coca-cola.com/gb/en/brands/oasis" class="btn btn-primary">Find out more ...</a>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+    <br>
+
+    <!-- Footer -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <div class="navbar-text float-left copyright">
+                <p>&copy 2024 Mobile 3D Applications</p>
+            </div>
+
+            <input type="button" value="Re-style" onclick="changeLook()" style="background-color: rgb(0, 255, 55);" />
+            
+            <div class="navbar-text float-right social">
+                <a href="https://github.com/midoallam03/3dapp.git"><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a href="https://github.com/midoallam03/3dapp.git"><i class="fab fa-twitter-square fa-2x"></i></a>
+                <a href="https://github.com/midoallam03/3dapp.git"><i class="fab fa-instagram-square fa-2x"></i></a>
+                <a href="https://github.com/midoallam03/3dapp.git"><i class="fab fa-github-square fa-2x"></i></a>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <!-- Assets -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+    <!-- Custom JS -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/getJsonData.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- X3DOM JS -->
+    <script type="text/javascript" src="https://www.x3dom.org/download/x3dom.js"></script>
+    <script src="x3dom-1.8.2/x3dom.js"></script>
+    <script src="js/jquery-3.7.1.js"></script>
+    <!--Gallery Generator-->
+    <script type="text/javascript" src="assets/gallery/sides/scripts/gallery_generator.js"></script>
+</body>
+</html>
